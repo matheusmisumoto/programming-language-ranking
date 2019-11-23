@@ -1,0 +1,45 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,500,700,900&display=swap');
+
+html { font-size: 0.7vw; }
+body { margin: 0 auto; padding: 0; font-family: 'Montserrat', sans-serif; background-image: url('bg.jpg'); background-position: center center; background-attachment: fixed; background-size: cover; display: flex; flex-direction: column; height: 100vh; }
+h1 { margin: 0 auto; text-align: center; font-size: 5em; line-height: 3em; font-weight: 900; letter-spacing: -0.03em; text-transform: uppercase; color: #FFFFFF; flex: 1; background-color: rgba(0, 0, 0, 0.75); width: 100vw; }
+main { background-color: rgba(255,255,255,0.8); flex: 7; vertical-align: middle; }
+main > ul { list-style: none; margin: 5vh auto; padding: 0; max-width: 90vw; }
+main > ul > li { margin: 1em 0; padding: 0; }
+.content > *, #itens > * { font-size: 3em; margin: 0.5em; }
+.content > span, #itens > span { flex-basis: 2vw; flex-shrink: 0; }
+li > div > h2 { flex-basis: 30vw; flex-shrink: 0; font-weight: 700; }
+li > div > ul { flex-basis: 50vw; flex-shrink: 0; display: flex; list-style: none; margin: 0; padding: 0; }
+li > div > ul > li { flex: 1; margin: 0 0.2em; padding: 0; vertical-align: middle; font-weight: 300; text-align: center; }
+.border:nth-child(2), .border:nth-child(2) > .content { animation-delay: 0; }
+.border:nth-child(3), .border:nth-child(3) > .content { animation-delay: 0.5s; }
+.border:nth-child(4), .border:nth-child(4) > .content { animation-delay: 1s; }
+.border:nth-child(5), .border:nth-child(5) > .content { animation-delay: 1.5s; }
+.border:nth-child(6), .border:nth-child(6) > .content { animation-delay: 2s; }
+
+#itemDescription { width: 100%; height: 5em; }
+#itens { width: 97%; display: flex; margin: 0; padding: 0; }
+#itens span { flex-basis: 2vw; flex-shrink: 0; }
+#itens h2 { flex-basis: 30vw; flex-shrink: 0; }
+#itens ul { flex-basis: 50vw; flex-shrink: 0; text-align: right; font-weight: 700; }
+#itens ul > li { flex: 1; margin: 0 0.2em; padding: 0; vertical-align: middle; font-weight: 700; text-align: center; }
+.border, .content { min-height: 50%; transition-timing-function: ease-in-out; }
+.border { width: 100%; animation-name: gcBorder; animation-duration: 1s; animation-fill-mode: backwards; }
+.border { background-color: #c60000; }
+.content { width: 99%; background-color: #6e0000; animation-name: gcTitle; animation-duration: 1s; text-transform: uppercase; white-space: nowrap; overflow: hidden; color: #FFF; display: flex; animation-fill-mode: backwards; }
+.text { width: 100%; height: 0; background: rgba(0,0,0,0.5); animation-name: gcText; animation-duration: 9s; animation-delay: 0.5s; overflow: hidden; color: #FFF; font-size: 0.9em; }
+
+@keyframes gcBorder {
+  0% { width: 0; }
+  100% { width: 100%; }
+}
+@keyframes gcTitle {
+  0%, 20% { width: 0; }
+  100% { width: 99%; }
+}
+@keyframes gcText {
+  0% { height: 0; }
+  2.5%, 97.5% { height: 6em; }
+  100% { height: 0; }
+}
