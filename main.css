@@ -1,35 +1,55 @@
 @charset "utf-8";
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,500,700,900&display=swap');
 
-html { font-size: 0.7vw; }
-body { margin: 0 auto; padding: 0; font-family: 'Montserrat', sans-serif; background-image: url('bg.jpg'); background-position: center center; background-attachment: fixed; background-size: cover; display: flex; flex-direction: column; height: 100vh; }
-h1 { margin: 0 auto; text-align: center; font-size: 5em; line-height: 3em; font-weight: 900; letter-spacing: -0.03em; text-transform: uppercase; color: #FFFFFF; flex: 1; background-color: rgba(0, 0, 0, 0.75); width: 100vw; }
-main { background-color: rgba(255,255,255,0.8); flex: 7; vertical-align: middle; }
-main > ul { list-style: none; margin: 5vh auto; padding: 0; max-width: 90vw; }
+html { font-size: 0.6vw; }
+body { margin: 0 auto; padding: 0; font-family: 'Montserrat', sans-serif; /* background-image: url('bg.jpg'); background-position: center center; background-attachment: fixed; background-size: cover; */ display: flex; flex-direction: column; height: 100vh; }
+button{ min-width: 150px; font-family: 'Montserrat', sans-serif; font-weight:700; text-transform: uppercase; border:none; padding:10px; cursor: pointer; display:inline-block; text-decoration: none; background:#c60000; color:#FFF; border-bottom: 5px solid #6e0000;}
+button:hover{ background:#b71111; border-bottom: 5px solid #600000;}
+button:active{ position:relative; top:5px; box-shadow:none;}
+header { margin: 0 auto; padding: 3em 0; text-align: center; flex: 1; background-color: rgba(60, 0, 0, 0.75); width: 100vw; }
+h1 {  margin: 0; padding: 0; font-size: 5em; font-weight: 900; letter-spacing: -0.03em; text-transform: uppercase; color: #FFFFFF; }
+header > span { margin: 0; font-size: 2.5em; line-height: 2em; color: #FFF; font-weight: 300; text-transform: uppercase; }
+main { animation-name: intro; animation-duration: 1s; background-color: rgba(255,255,255,0.8); flex: 7; vertical-align: middle; }
+main > ul {  animation-name: thedelay; animation-duration: 1s; list-style: none; margin: 5vh auto; padding: 0; max-width: 90vw; margin-bottom: 0px; }
 main > ul > li { margin: 1em 0; padding: 0; }
 .content > *, #itens > * { font-size: 3em; margin: 0.5em; }
 .content > span, #itens > span { flex-basis: 2vw; flex-shrink: 0; }
 li > div > h2 { flex-basis: 30vw; flex-shrink: 0; font-weight: 700; }
 li > div > ul { flex-basis: 50vw; flex-shrink: 0; display: flex; list-style: none; margin: 0; padding: 0; }
-li > div > ul > li { flex: 1; margin: 0 0.2em; padding: 0; vertical-align: middle; font-weight: 300; text-align: center; }
-.border:nth-child(2), .border:nth-child(2) > .content { animation-delay: 0; }
-.border:nth-child(3), .border:nth-child(3) > .content { animation-delay: 0.5s; }
-.border:nth-child(4), .border:nth-child(4) > .content { animation-delay: 1s; }
-.border:nth-child(5), .border:nth-child(5) > .content { animation-delay: 1.5s; }
-.border:nth-child(6), .border:nth-child(6) > .content { animation-delay: 2s; }
-
-#itemDescription { width: 100%; height: 5em; }
+li > div > ul > li { margin: 0 0.2em; padding: 0; vertical-align: middle; font-weight: 300; text-align: center; }
+.border:nth-child(2), .border:nth-child(2) > .content { animation-delay: 1s; }
+.border:nth-child(3), .border:nth-child(3) > .content { animation-delay: 1.5s; }
+.border:nth-child(4), .border:nth-child(4) > .content { animation-delay: 2s; }
+.border:nth-child(5), .border:nth-child(5) > .content { animation-delay: 2.5s; }
+.border:nth-child(6), .border:nth-child(6) > .content { animation-delay: 3s; }
 #itens { width: 97%; display: flex; margin: 0; padding: 0; }
 #itens span { flex-basis: 2vw; flex-shrink: 0; }
 #itens h2 { flex-basis: 30vw; flex-shrink: 0; }
 #itens ul { flex-basis: 50vw; flex-shrink: 0; text-align: right; font-weight: 700; }
 #itens ul > li { flex: 1; margin: 0 0.2em; padding: 0; vertical-align: middle; font-weight: 700; text-align: center; }
+#itens > ul li{background-image: url('Github.svg'); list-style: none;width: 500px; height: 100px; }
+#itens> ul > li img {width: 294px; height: 100px; margin-left: 110px;}
 .border, .content { min-height: 50%; transition-timing-function: ease-in-out; }
 .border { width: 100%; animation-name: gcBorder; animation-duration: 1s; animation-fill-mode: backwards; }
 .border { background-color: #c60000; }
 .content { width: 99%; background-color: #6e0000; animation-name: gcTitle; animation-duration: 1s; text-transform: uppercase; white-space: nowrap; overflow: hidden; color: #FFF; display: flex; animation-fill-mode: backwards; }
 .text { width: 100%; height: 0; background: rgba(0,0,0,0.5); animation-name: gcText; animation-duration: 9s; animation-delay: 0.5s; overflow: hidden; color: #FFF; font-size: 0.9em; }
+#btns{display: block; margin-right: auto; margin-left: auto;margin-top:20px; width: 520px;}
+#btnG{margin-left: 10px; margin-right: 10px;}
+#lista{margin-top:0px; width: 1186px;}
 
+
+@keyframes intro {
+  0% { flex: 0; height: 0; }
+  100% { flex: 7; }
+}
+@keyframes thedelay { 
+from {
+        width:0;
+        height:0;
+        overflow:hidden;
+    }
+}
 @keyframes gcBorder {
   0% { width: 0; }
   100% { width: 100%; }
